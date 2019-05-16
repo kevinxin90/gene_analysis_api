@@ -18,7 +18,6 @@ class FunctionalSimilarityHandler(BaseHandler):
 
     def callback_task(self, hash_input, input_curie_list, taxon, threshold):
         try:
-            print('hash_input', hash_input, 'input_curie_list', input_curie_list, 'taxon', taxon, 'threshold', threshold)
             input_curie_set = [{"hit_id": _gene, "hit_symbol": None} for _gene in input_curie_list]
             mod1a_input_object_human = {
                 "input": input_curie_set,
