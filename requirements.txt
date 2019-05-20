@@ -1,3 +1,4 @@
+mvp-module-library
 tornado
 ontobio
 mygene==3.1.0
