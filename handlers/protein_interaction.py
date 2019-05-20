@@ -24,8 +24,6 @@ class ProteinInteractionHandler(BaseHandler):
                     'threshold': None,
                 },
             }
-            print('input: {}'.format(mod1E_input_object_human))
-            print('start to find interactions')
             interactions_human = GeneInteractions()
             interactions_human.load_input_object(mod1E_input_object_human)
             interactions_human.load_gene_set()
@@ -35,7 +33,6 @@ class ProteinInteractionHandler(BaseHandler):
             high_counts = counts[counts['counts'] > 12]['unique_values'].tolist()
             Mod1E_results_final = pd.DataFrame(Mod1E_results_human[Mod1E_results_human['hit_symbol'].isin(high_counts)])
             mod1e_results = Mod1E_results_final.to_dict('records')
-            print('interactions found: {}'.format(mod1e_results))
             write_result_to_file(hash_input, mod1e_results)
         except Exception as e:
             print('Failed to upload to ftp: '+ str(e))
