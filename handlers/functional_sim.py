@@ -42,6 +42,9 @@ class FunctionalSimilarityHandler(BaseHandler):
         input_curies = self.get_query_argument('input_gene_list')
         input_curie_list = input_curies.split(',')
         # convert input into hash
+        # TODO:  hash the json input string
+        # TODO:  change to BLAK8
+        # TODO: allow user to specify session ID with the hash
         hash_input = hashInput(taxon + str(threshold) + input_curies)
         """
         Check job status
