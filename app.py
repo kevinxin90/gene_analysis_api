@@ -10,7 +10,8 @@ class Application(tornado.web.Application):
     def __init__(self):
         handlers = [
             (r"/api/v1/func_sim", FunctionalSimilarityHandler),
-            (r"/api/v1/protein_interact", ProteinInteractionHandler)
+            (r"/api/v1/protein_interact", ProteinInteractionHandler),
+            (r"/api/v1/query", HintHandler)
         ]
 
         tornado.web.Application.__init__(self, handlers)
