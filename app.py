@@ -4,6 +4,7 @@ import tornado.web
 
 from handlers.functional_sim import FunctionalSimilarityHandler
 from handlers.protein_interaction import ProteinInteractionHandler
+from handlers.hint import HintHandler
 
 
 class Application(tornado.web.Application):
