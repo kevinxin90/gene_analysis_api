@@ -5,6 +5,7 @@ import tornado.web
 from handlers.functional_sim import FunctionalSimilarityHandler
 from handlers.protein_interaction import ProteinInteractionHandler
 from handlers.hint import HintHandler
+from handlers.test import TestHandler
 
 
 class Application(tornado.web.Application):
@@ -12,7 +13,8 @@ class Application(tornado.web.Application):
         handlers = [
             (r"/api/v1/func_sim", FunctionalSimilarityHandler),
             (r"/api/v1/protein_interact", ProteinInteractionHandler),
-            (r"/api/v1/query", HintHandler)
+            (r"/api/v1/query", HintHandler),
+            (r"/api/v1/test", TestHandler)
         ]
 
         tornado.web.Application.__init__(self, handlers)
